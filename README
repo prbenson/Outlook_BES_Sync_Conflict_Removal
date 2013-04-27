@@ -1,0 +1,6 @@
+For all the BES Admins out there who's users require Cached Exchange Mode in Outlook 2007, and enable it even though it's not officially supported (like myself) and realize the consequences are bloated sync issues and conflicts, I've developed this script (kudos to Juvigy).
+
+Several of our Outlook users have complained of slow-down or a complete freeze of Outlook while this does its maintenance.  To get around this, I've used _Timer_GetIdleTime() to hook into Window's idle time.  By doing this, the sync issues and conflicts are only removed when the user hasn't touched their mouse or keyboard for over 1 minute.  If they do, this stops in its tracks and waits for a minute of idle time before picking up where it left off.  If the computer is idle all day long, it will check for new sync issues and conflicts at a maximum of every 10 minutes.
+
+Original AutoIt Forum Post for this:
+http://www.autoitscript.com/forum/topic/120274-removing-sync-issues-conflicts-in-outlook/
